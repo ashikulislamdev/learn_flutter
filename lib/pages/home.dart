@@ -16,7 +16,9 @@ class HomaPage extends StatelessWidget {
       drawer: Drawer(),
 
       body: Container(
-        child: Text("Wellcome to $days of fluuter by $name"),
+        child: Center(
+          child: Text("Wellcome to $days of fluuter by $name"),
+        ),
       ),
     );
   }
