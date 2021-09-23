@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_app/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,19 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: First(),
+      home: HomaPage(), 
     );
   }
 }
 
-class First extends StatelessWidget {
-  const First({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('You have pushed the button this many times:'),
-      ),
-    );
-  }
-}
