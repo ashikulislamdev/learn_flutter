@@ -24,11 +24,14 @@ class MyApp extends StatelessWidget {
       ),
       
       //home: HomaPage(),
-      initialRoute: '/',
+      //initialRoute: '/',
+
+      initialRoute: MyRoutes.homeRoute,
+
       routes: {
         '/' : (context) => LoginPage(),
         MyRoutes.homeRoute : (context) => HomaPage(),
-        MyRoutes.loginRoute : (context) => LoginPage()
+        MyRoutes.loginRoute : (context) => LoginPage(),
       },
     );
   }

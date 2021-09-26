@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_app/widgets/drawer.dart';
 
 class HomaPage extends StatelessWidget {
   const HomaPage({ Key? key }) : super(key: key);
@@ -13,7 +14,7 @@ class HomaPage extends StatelessWidget {
         centerTitle: true,
       ),
 
-      drawer: Drawer(),
+      drawer: MyDrawer(),
 
       body: Container(
         child: Center(
