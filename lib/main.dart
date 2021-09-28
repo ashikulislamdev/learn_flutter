@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_app/pages/home.dart';
 import 'package:learn_app/pages/login_page.dart';
 import 'package:learn_app/utlts/routes.dart';
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.datkTheme(context),
       
-      //home: HomaPage(),
+      //home: classPrectice(),
       //initialRoute: '/',
 
       initialRoute: MyRoutes.homeRoute,

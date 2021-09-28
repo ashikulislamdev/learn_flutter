@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_app/utlts/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({ Key? key }) : super(key: key);
+
+  moveToLogin(BuildContext context) async {
+    Navigator.pushNamed(context, MyRoutes.loginRoute); 
+  }
+
+  /* moveToHome(BuildContext context) async {
+    Navigator.pushNamed(context, MyRoutes.homeRoute); 
+  } */
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +44,12 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(CupertinoIcons.mail, color: Colors.white,),
               title: Text("Mail-me", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+            ),
+            Divider(thickness: 1, indent: 16, color: Colors.white,),
+            ListTile(
+              onTap: () => moveToLogin(context),
+              leading: Icon(CupertinoIcons.lock, color: Colors.white,),
+              title: Text("Log-in", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             ),
 
           ],
