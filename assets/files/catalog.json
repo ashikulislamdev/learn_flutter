@@ -1,0 +1,60 @@
+{
+  "products":[
+    {
+      "id": 1,
+      "name": "iPhone 12 Pro",
+      "desc": "Apple iPhone 12th generation",
+      "price": 999,
+      "color": "#33505a",
+      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Pixel 5",
+      "desc": "Google Pixel phone 5th generation",
+      "price": 674,
+      "color": "#2250da",
+      "image" : "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 3,
+      "name": "M1 Mackbook Air",
+      "desc": "Apple Mackbook air with apple edition",
+      "price": 1224,
+      "color": "#f1b1b1",
+      "image" : "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 4,
+      "name": "XPERIA 5 II",
+      "desc": "Sony XPERIA 5 II 5th generation",
+      "price": 500,
+      "color": "#a0f3f1",
+      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Airpods Pro",
+      "desc": "Apple Aipods Pro 1st generation",
+      "price": 200,
+      "color": "#3330da",
+      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 6,
+      "name": "iPed Pro",
+      "desc": "Apple iPad Pro 2020 edition",
+      "price": 799,
+      "color": "#666aaa",
+      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Galaxy S21 Ultra",
+      "desc": "Samsung Galaxy S21 Ultra 2021 edition",
+      "price": 723,
+      "color": "#ab26b2",
+      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+    }
+  ]
+}
