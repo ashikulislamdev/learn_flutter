@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,7 +25,7 @@ class _HomaPageState extends State<HomaPage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    //await Future.delayed(Duration(seconds: 2));
     final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     final decodeJson = jsonDecode(catalogJson);
     var productData = decodeJson["products"];
@@ -48,14 +49,43 @@ class _HomaPageState extends State<HomaPage> {
 
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: /* (CatalogModal.items !=null && CatalogModal.items.isNotEmpty)? */ ListView.builder(
+        child: /* (CatalogModal.items !=null && CatalogModal.items.isNotEmpty)? */ /* ListView.builder(
           itemCount: CatalogModal.items.length,
+          itemBuilder: (context, index) => ItemWidget( item: CatalogModal.items[index]),
+        ) */ /* : Center(child: CircularProgressIndicator(),) */
+        
+        GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 15,
+          ), 
           itemBuilder: (context, index){
-            return ItemWidget(
-              item: CatalogModal.items[index],
+            final item = CatalogModal.items[index];
+            return GridTile(
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: Image.network(item.image),
+              ),
+              header: Container(
+                child: Text(item.name, style: TextStyle(color: Colors.white),),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                ),
+              ),
+              footer: Container(
+                child: Text(item.price.toString(), style: TextStyle(color: Colors.white),),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                ),
+              ),
             );
           },
-        ) /* : Center(child: CircularProgressIndicator(),) */,
+          itemCount: CatalogModal.items.length,
+        ),
       ),
     );
   }

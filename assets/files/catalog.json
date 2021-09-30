@@ -14,15 +14,15 @@
       "desc": "Google Pixel phone 5th generation",
       "price": 674,
       "color": "#2250da",
-      "image" : "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image" : "https://m.media-amazon.com/images/I/61TyEutPUnS._AC_SL1500_.jpg"
     },
     {
       "id": 3,
-      "name": "M1 Mackbook Air",
-      "desc": "Apple Mackbook air with apple edition",
+      "name": "M1 Macbook Air",
+      "desc": "Apple Macbook air with apple edition",
       "price": 1224,
       "color": "#f1b1b1",
-      "image" : "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image" : "https://m.media-amazon.com/images/I/51hUr1cuCJL._AC_SL1200_.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "desc": "Sony XPERIA 5 II 5th generation",
       "price": 500,
       "color": "#a0f3f1",
-      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image": "https://m.media-amazon.com/images/I/71YvGj855+L._AC_SL1500_.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "desc": "Apple Aipods Pro 1st generation",
       "price": 200,
       "color": "#3330da",
-      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image": "https://m.media-amazon.com/images/I/71wFeCCMPKL._AC_SL1500_.jpg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "desc": "Apple iPad Pro 2020 edition",
       "price": 799,
       "color": "#666aaa",
-      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image": "https://m.media-amazon.com/images/I/815ztYEEwYL._AC_SL1500_.jpg"
     },
     {
       "id": 7,
@@ -54,7 +54,55 @@
       "desc": "Samsung Galaxy S21 Ultra 2021 edition",
       "price": 723,
       "color": "#ab26b2",
-      "image": "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg"
+      "image": "https://m.media-amazon.com/images/I/61O45C5qASL._AC_SL1000_.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Gaming Keyboard",
+      "desc": "Razer Huntsman V2 Optical Gaming Keyboard",
+      "price": 123,
+      "color": "#a1c6b2",
+      "image": "https://m.media-amazon.com/images/I/71xiaUDxklL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Mini Mouse",
+      "desc": "Razer Viper Mini Ultralight Gaming Mouse",
+      "price": 723,
+      "color": "#abac12",
+      "image": "https://m.media-amazon.com/images/I/516NCsvHpmL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Spatial Surround Sound",
+      "desc": "Razer BlackShark V2 Gaming Headset:THX 7.1",
+      "price": 723,
+      "color": "#ab26b2",
+      "image": "https://m.media-amazon.com/images/I/61wrOi+03FL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 11,
+      "name": "1+ Triple Camera",
+      "desc": "OnePlus 9 Winter Mist, 5G Unlocked Android",
+      "price": 723,
+      "color": "#ab26b2",
+      "image": "https://m.media-amazon.com/images/I/610aUK36VYL._AC_SL1000_.jpg"
+    },
+    {
+      "id": 12,
+      "name": "New Gaming Phone",
+      "desc": "Red Magic 6 5G Factory Unlocked Cell Phone",
+      "price": 723,
+      "color": "#ab26b2",
+      "image": "https://m.media-amazon.com/images/I/61ZYeY34zBS._AC_SL1500_.jpg"
+    },
+    {
+      "id": 13,
+      "name": "New ASUS",
+      "desc": "New ASUS TUF Dash 15 (2021) Ultra Slim",
+      "price": 723,
+      "color": "#abc2b2",
+      "image": "https://m.media-amazon.com/images/I/81f-JgUXsoS._AC_SL1500_.jpg"
     }
   ]
 }
