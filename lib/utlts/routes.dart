@@ -1,6 +1,6 @@
-import 'package:learn_app/pages/home.dart';
-
+import 'package:flutter/material.dart';
 class MyRoutes{
   static String loginRoute = '/login';
   static String homeRoute = '/home';
+  static String classShowFile = '/showClass';
 }

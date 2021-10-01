@@ -13,6 +13,10 @@ class MyDrawer extends StatelessWidget {
     Navigator.pushNamed(context, MyRoutes.homeRoute); 
   } */
 
+  moveShowClassFile(BuildContext context) async {
+    Navigator.pushNamed(context, MyRoutes.classShowFile);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -32,8 +36,9 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.home, color: Colors.white,),
-              title: Text("Home", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+              onTap: () => moveShowClassFile(context),
+              leading: Icon(CupertinoIcons.today, color: Colors.white,),
+              title: Text("Today's", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             ),
             Divider(thickness: 1, indent: 16, color: Colors.white,),
             ListTile(

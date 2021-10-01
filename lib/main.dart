@@ -4,6 +4,8 @@ import 'package:learn_app/pages/login_page.dart';
 import 'package:learn_app/utlts/routes.dart';
 import 'package:learn_app/widgets/themes.dart';
 
+import 'class_files/class_home.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
 
       routes: {
         '/' : (context) => LoginPage(),
+        MyRoutes.classShowFile : (context) => ClassShowFile(),
         MyRoutes.homeRoute : (context) => HomaPage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
       },
