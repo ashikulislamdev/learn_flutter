@@ -42,8 +42,8 @@ class MyDrawer extends StatelessWidget {
             ),
             Divider(thickness: 1, indent: 16, color: Colors.white,),
             ListTile(
-              leading: Icon(CupertinoIcons.profile_circled, color: Colors.white,),
-              title: Text("Profile", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+              leading: Icon(Icons.calculate, color: Colors.white,),
+              title: Text("Calculator", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             ),
             Divider(thickness: 1, indent: 16, color: Colors.white,),
             ListTile(
