@@ -7,6 +7,7 @@ import 'package:learn_app/pages/login_page.dart';
 import 'package:learn_app/utlts/routes.dart';
 import 'package:learn_app/widgets/themes.dart';
 
+import 'calculator/calculator.dart';
 import 'class_files/class_home.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) => LoginPage(),
         MyRoutes.classShowFile : (context) => ClassShowFile(),
+        MyRoutes.calculateRoute : (context) => MyCalculator(),
         MyRoutes.homeRoute : (context) => HomaPage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
         MyRoutes.cardRoute : (context) => CardPage(),

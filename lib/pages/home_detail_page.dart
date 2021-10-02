@@ -37,6 +37,7 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
+      
       backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,

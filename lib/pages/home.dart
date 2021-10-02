@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -53,6 +52,12 @@ class _HomaPageState extends State<HomaPage> {
         backgroundColor: context.theme.buttonColor,
       ),
       backgroundColor: context.canvasColor,
+      drawer: MyDrawer(),
+      appBar: AppBar(
+        title: "DeshiPonno".text.color(context.accentColor).make(),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,   //EdgeInsets.all(value)

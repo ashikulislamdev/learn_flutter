@@ -11,6 +11,12 @@ class CatalogModal {
       image: "https://m.media-amazon.com/images/I/71uuDYxn3XL.jpg",
     ),
   ];
+
+  //get item by Id
+  Item getById(int id) => items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get item by position
+  Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
