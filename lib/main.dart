@@ -1,6 +1,7 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:learn_app/pages/card_page.dart';
 import 'package:learn_app/pages/home.dart';
 import 'package:learn_app/pages/login_page.dart';
 import 'package:learn_app/utlts/routes.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.classShowFile : (context) => ClassShowFile(),
         MyRoutes.homeRoute : (context) => HomaPage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
+        MyRoutes.cardRoute : (context) => CardPage(),
       },
     );
   }
