@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:learn_app/utlts/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -29,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child: SingleChildScrollView(   //for scrolling up to down  just testing by add image height
         child: Form(
           key: _formKey,
@@ -107,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.deepPurple,
+                          color: context.theme.buttonColor,
                           //shape: loginBtnCng?BoxShape.rectangle : BoxShape.circle,
                           borderRadius: BorderRadius.circular(loginBtnCng?50: 7),
                         ),

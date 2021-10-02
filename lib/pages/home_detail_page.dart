@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:learn_app/widgets/themes.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -26,7 +28,7 @@ class HomeDetailPage extends StatelessWidget {
             onPressed: (){}, 
             child: "Buy".text.xl2.bold.make(),
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+              backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
               shape: MaterialStateProperty.all(StadiumBorder())
             ),
           ).wh(100, 50),
@@ -35,7 +37,7 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -50,11 +52,11 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEX,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
-                      catalog.name.text.lg.color(MyTheme.darkBluishColor).xl4.bold.make(),   //text - large(lg/xl) - bolt
+                      catalog.name.text.lg.color(context.accentColor).xl4.bold.make(),   //text - large(lg/xl) - bolt
                       catalog.desc.text.textStyle(context.captionStyle).center.xl.make(),
                       10.heightBox,
                       "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content".text.center.make().p16(),

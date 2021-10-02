@@ -50,8 +50,9 @@ class _HomaPageState extends State<HomaPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cardRoute),
         child: Icon(Icons.shopping_cart_outlined),
+        backgroundColor: context.theme.buttonColor,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         child: Container(
           padding: Vx.m32,   //EdgeInsets.all(value)
