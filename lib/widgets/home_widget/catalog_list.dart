@@ -1,10 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:learn_app/modals/card.dart';
 import 'package:learn_app/modals/catalog.dart';
 import 'package:learn_app/pages/home_detail_page.dart';
+import 'package:learn_app/widgets/home_widget/add_to_card.dart';
 import 'package:learn_app/widgets/home_widget/catalog_image.dart';
-import 'package:learn_app/widgets/themes.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
 
@@ -64,7 +63,7 @@ class CatalogItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.lg.make(),
-                  _AddToCard(catalog: catalog),
+                  AddToCard(catalog: catalog),
                 ],
               ).pOnly(right: 8),
             ],
@@ -75,38 +74,3 @@ class CatalogItem extends StatelessWidget {
   }
 }
 
-class _AddToCard extends StatefulWidget {
-  final Item catalog;
-  const _AddToCard({
-    Key? key, required this.catalog,
-  }) : super(key: key);
-
-  @override
-  __AddToCardState createState() => __AddToCardState();
-}
-
-class __AddToCardState extends State<_AddToCard> {
-  bool isAdded = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: (){
-        isAdded = isAdded.toggle();
-        final _catalog = CatalogModal();
-        final _card = CardModel();
-
-        _card.catalog = _catalog;
-
-        _card.add(widget.catalog);
-        setState(() {
-          
-        });
-      }, 
-      child: isAdded? Icon(Icons.done) : "Buy".text.make(),
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
-        shape: MaterialStateProperty.all(StadiumBorder())
-      ),
-    );
-  }
-}

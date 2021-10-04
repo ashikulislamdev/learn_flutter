@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:learn_app/widgets/home_widget/add_to_card.dart';
 import 'package:learn_app/widgets/themes.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
@@ -24,14 +25,7 @@ class HomeDetailPage extends StatelessWidget {
         buttonPadding: EdgeInsets.zero,
         children: [
           "\$${catalog.price}".text.bold.red800.xl4.make(),
-          ElevatedButton(
-            onPressed: (){}, 
-            child: "Buy".text.xl2.bold.make(),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
-              shape: MaterialStateProperty.all(StadiumBorder())
-            ),
-          ).wh(100, 50),
+          AddToCard(catalog: catalog).wh(100, 50),    //if click on buy detail page show done icon
         ],
       ).p32(),
       appBar: AppBar(

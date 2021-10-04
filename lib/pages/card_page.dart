@@ -71,12 +71,17 @@ class _cardListState extends State<cardList> {
   final _card = CardModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return _card.items.isEmpty ? "No products purchased yet!".text.xl2.makeCentered() : ListView.builder(
       itemCount: _card.items.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.download_done_outlined),
         trailing: IconButton(
-          onPressed: (){}, 
+          onPressed: (){
+            _card.remove(_card.items[index]);     //remove item from card
+            setState(() {
+              
+            });
+          }, 
           icon: Icon(Icons.remove_circle_outline)
         ),
         title: _card.items[index].name.text.make(),

@@ -3,9 +3,9 @@ import 'dart:convert';
 class CatalogModal {
 
   //create a singleTen to repet and create auto object for all add card data
-  static final catModal = CatalogModal._internal();
+  /* static final catModal = CatalogModal._internal();
   CatalogModal._internal();
-  factory CatalogModal() => catModal;
+  factory CatalogModal() => catModal; */
 
 
 
