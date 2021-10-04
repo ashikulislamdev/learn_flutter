@@ -1,6 +1,7 @@
 import 'package:learn_app/modals/catalog.dart';
 
-class CartModel {
+class CardModel {
+
   // catalog field
   late CatalogModal _catalog;
 
@@ -31,4 +32,5 @@ class CartModel {
   void remove(Item item) {
     _itemIds.remove(item.id);
   }
+
 }
