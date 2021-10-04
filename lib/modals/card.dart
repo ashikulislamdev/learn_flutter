@@ -2,11 +2,11 @@ import 'package:learn_app/modals/catalog.dart';
 
 class CardModel {
 
-  /* static final cardModel = CardModel._internal();
+  static final cardModel = CardModel._internal();
 
   CardModel._internal();
 
-  factory CardModel() => cardModel; */
+  factory CardModel() => cardModel;
 
 
   // catalog field
