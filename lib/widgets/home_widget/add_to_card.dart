@@ -18,7 +18,7 @@ class __AddToCardState extends State<AddToCard> {
         final _card = CardModel();
   @override
   Widget build(BuildContext context) {
-    bool isInCard = _card.items.contains(widget.catalog) ?? false;
+    bool isInCard = _card.items.contains(widget.catalog);
     return ElevatedButton(
       onPressed: (){
 
