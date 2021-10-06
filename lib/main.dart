@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       //home: classPrectice(),
       //initialRoute: '/',
 
-      initialRoute: MyRoutes.mailmeRoute,
+      initialRoute: MyRoutes.calculateRoute,
 
       routes: {
         '/' : (context) => LoginPage(),

@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:learn_app/widgets/themes.dart';
+import 'package:learn_app/calculator/buttonWidget.dart';
+import 'package:learn_app/calculator/calculator_color.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-
-String input = '';
 
 class MyCalculator extends StatefulWidget {
   const MyCalculator({ Key? key }) : super(key: key);
@@ -14,9 +12,166 @@ class MyCalculator extends StatefulWidget {
 }
 
 class My_CalculatorState extends State<MyCalculator> {
+
+  int firstNum = 0;
+  int lastNum = 0;
+  String histry = '';
+  String textToDisplay = '10';
+  String res = '10';
+  String oparetion = '-';
+  
+  void btnOnClick(String btnVal){
+    print(btnVal);
+    if (btnVal == 'AC') {
+      textToDisplay = '';
+      firstNum = 0;
+      lastNum = 0;
+      res = '';
+    }else if (btnVal == 'x') {
+      textToDisplay = '';
+      firstNum = 0;
+      lastNum = 0;
+      res = '';
+      histry = '';
+    }else if (btnVal == '+' || btnVal == '-' || btnVal == '*' || btnVal == '/') {
+      firstNum = int.parse(textToDisplay);
+      res = '';
+      oparetion = btnVal;
+    } else if (btnVal == '=') {
+      lastNum = int.parse(textToDisplay);
+      if (oparetion == '+') {
+        res = (firstNum + lastNum).toString();
+        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
+      }
+      if (oparetion == '-') {
+        res = (firstNum - lastNum).toString();
+        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
+      }
+      if (oparetion == '*') {
+        res = (firstNum * lastNum).toString();
+        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
+      }
+      if (oparetion == '/') {
+        res = (firstNum / lastNum).toString();
+        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
+      }else{
+        res = int.parse(textToDisplay + btnVal).toString();
+      }
+
+    }
+      setState(() {
+        textToDisplay = res;
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: "New Calculator".text.make().centered(),
+      ),
+
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  textToDisplay.text.xl6.color(CalColor.numbers).overflow(TextOverflow.ellipsis).make(),
+                  histry.text.xl4.color(CalColor.numbers).overflow(TextOverflow.ellipsis).make(),
+                ],
+              ),
+            ), 
+            ),
+            Expanded(flex: 2, 
+              child: Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: CalColor.bg2,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+              ),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        CalculatorButton(button_text: 'C', callback: btnOnClick,),2.widthBox,
+
+                        CalculatorButton(button_text: 'x', callback: btnOnClick,),2.widthBox,
+
+                        CalculatorButton(button_text: '>', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '/', callback: btnOnClick),
+                      ],
+                    ),
+                  ),2.heightBox,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        CalculatorButton(button_text: '9', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '8', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '7', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '*', callback: btnOnClick),2.widthBox,
+                      ],
+                    ),
+                  ),2.heightBox,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        CalculatorButton(button_text: '6', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '5', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '4', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '-', callback: btnOnClick),
+                      ],
+                    ),
+                  ),2.heightBox,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        CalculatorButton(button_text: '1', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '2', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '3', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '+', callback: btnOnClick),2.widthBox,
+                      ],
+                    ),
+                  ),2.heightBox,
+
+                  Expanded(
+                    child: Row(
+                      children: [
+                        CalculatorButton(button_text: '0', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '00', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '.', callback: btnOnClick),2.widthBox,
+
+                        CalculatorButton(button_text: '=', callback: btnOnClick),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+     /* Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: "New Calculator".text.color(context.theme.accentColor).make(),
@@ -198,6 +353,7 @@ class My_CalculatorState extends State<MyCalculator> {
           ),2.heightBox,
         ],
       ),
-    );
+    ) */
+
   }
 }
