@@ -5,10 +5,11 @@ import 'package:learn_app/pages/card_page.dart';
 import 'package:learn_app/pages/home.dart';
 import 'package:learn_app/pages/login_page.dart';
 import 'package:learn_app/utlts/routes.dart';
+import 'package:learn_app/widgets/tabs.dart';
 import 'package:learn_app/widgets/themes.dart';
 
 import 'calculator/calculator.dart';
-import 'class_files/class_home.dart';
+import 'class_files/form/form.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,14 +27,15 @@ class MyApp extends StatelessWidget {
       //home: classPrectice(),
       //initialRoute: '/',
 
-      initialRoute: MyRoutes.loginRoute,
+      initialRoute: MyRoutes.mailmeRoute,
 
       routes: {
         '/' : (context) => LoginPage(),
-        MyRoutes.classShowFile : (context) => ClassShowFile(),
+        MyRoutes.classShowFile : (context) => NewForm(),
         MyRoutes.calculateRoute : (context) => MyCalculator(),
-        MyRoutes.homeRoute : (context) => HomaPage(),
+        MyRoutes.homeRoute : (context) => HomePage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
+        MyRoutes.mailmeRoute : (context) => TabsBar(),
         MyRoutes.cardRoute : (context) => CardPage(),
       },
     );

@@ -12,14 +12,14 @@ import 'package:velocity_x/velocity_x.dart';
 import 'package:learn_app/modals/catalog.dart';
 import 'package:learn_app/widgets/themes.dart';
 
-class HomaPage extends StatefulWidget {
-  const HomaPage({ Key? key }) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({ Key? key }) : super(key: key);
 
   @override
-  _HomaPageState createState() => _HomaPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomaPageState extends State<HomaPage> {
+class _HomePageState extends State<HomePage> {
   final int days = 30;
   final String name = "White";
 

@@ -4,6 +4,7 @@ class MyRoutes{
   static String calculateRoute = '/calculate';
   static String homeRoute = '/home';
   static String homeDetailsRoute = '/detail';
+  static String mailmeRoute = '/mailme';
   static String loginRoute = '/login';
   static String cardRoute = '/card';
 }
