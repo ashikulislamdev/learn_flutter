@@ -4,14 +4,14 @@ import 'package:velocity_x/velocity_x.dart';
 
 class CalculatorButton extends StatelessWidget {
   final String button_text;
-  final Function callback;
-  const CalculatorButton({ Key? key, required this.button_text, required this.callback }) : super(key: key);
+  final Function btnOnClick;
+  const CalculatorButton({ Key? key, required this.button_text, required this.btnOnClick }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ElevatedButton(
-        onPressed: ()=> callback(button_text),
+        onPressed: ()=> btnOnClick(button_text),
         child: button_text.text.xl5.center.bold.color(CalColor.numbers).make().whFull(context).pOnly(top: 15),
         style: ElevatedButton.styleFrom(
           primary: CalColor.bg1,

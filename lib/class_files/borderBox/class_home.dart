@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'borderBox.dart';
 
-class ClassShowFile extends StatelessWidget {
-  const ClassShowFile({ Key? key }) : super(key: key);
+class ClassShowFileForm extends StatelessWidget {
+  const ClassShowFileForm({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

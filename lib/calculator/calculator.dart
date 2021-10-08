@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_app/calculator/buttonWidget.dart';
-import 'package:learn_app/calculator/calculator_color.dart';
+import 'package:learn_app/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 
 class MyCalculator extends StatefulWidget {
@@ -13,55 +14,43 @@ class MyCalculator extends StatefulWidget {
 
 class My_CalculatorState extends State<MyCalculator> {
 
-  int firstNum = 0;
-  int lastNum = 0;
-  String histry = '';
-  String textToDisplay = '10';
-  String res = '10';
-  String oparetion = '-';
+  String eqution = '0';
+  String result = '0';
+  String exprassion = '';
   
-  void btnOnClick(String btnVal){
-    print(btnVal);
-    if (btnVal == 'AC') {
-      textToDisplay = '';
-      firstNum = 0;
-      lastNum = 0;
-      res = '';
-    }else if (btnVal == 'x') {
-      textToDisplay = '';
-      firstNum = 0;
-      lastNum = 0;
-      res = '';
-      histry = '';
-    }else if (btnVal == '+' || btnVal == '-' || btnVal == '*' || btnVal == '/') {
-      firstNum = int.parse(textToDisplay);
-      res = '';
-      oparetion = btnVal;
-    } else if (btnVal == '=') {
-      lastNum = int.parse(textToDisplay);
-      if (oparetion == '+') {
-        res = (firstNum + lastNum).toString();
-        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
-      }
-      if (oparetion == '-') {
-        res = (firstNum - lastNum).toString();
-        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
-      }
-      if (oparetion == '*') {
-        res = (firstNum * lastNum).toString();
-        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
-      }
-      if (oparetion == '/') {
-        res = (firstNum / lastNum).toString();
-        histry = firstNum.toString() + oparetion.toString() + lastNum.toString();
-      }else{
-        res = int.parse(textToDisplay + btnVal).toString();
-      }
+  void btnOnClick(String btnText){
+    setState(() {
+      if (btnText == 'C') {
+        eqution = '0';
+        btnText = '0';
+        result = '0';
+      }else if (btnText == '⌫') {
+        eqution = eqution.substring(0, eqution.length - 1);
+        if (eqution == '') {
+          eqution = '0';
+        }
+      }else if (btnText == '=') {
 
-    }
-      setState(() {
-        textToDisplay = res;
-      });
+        exprassion = eqution;
+        exprassion = exprassion.replaceAll('×', '*');
+        exprassion = exprassion.replaceAll('÷', '/');
+        try {
+          Parser p = Parser();
+          Expression exp = p.parse(exprassion);
+
+          ContextModel cm = ContextModel();
+          result = '${exp.evaluate(EvaluationType.REAL, cm)}';
+        } catch (e) {
+          result = 'Error';
+        }
+      }else{
+        if (eqution == '0') {
+          eqution = btnText;
+        }else{
+          eqution = eqution + btnText;
+        }
+      }
+    });
   }
 
   @override
@@ -81,8 +70,8 @@ class My_CalculatorState extends State<MyCalculator> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  textToDisplay.text.xl6.color(CalColor.numbers).overflow(TextOverflow.ellipsis).make(),
-                  histry.text.xl4.color(CalColor.numbers).overflow(TextOverflow.ellipsis).make(),
+                  eqution.text.xl3.color(context.accentColor).overflow(TextOverflow.ellipsis).make(),
+                  result.text.xl5.color(context.accentColor).overflow(TextOverflow.ellipsis).make(),
                 ],
               ),
             ), 
@@ -91,7 +80,7 @@ class My_CalculatorState extends State<MyCalculator> {
               child: Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: CalColor.bg2,
+                color: context.accentColor,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
               ),
               child: Column(
@@ -99,52 +88,40 @@ class My_CalculatorState extends State<MyCalculator> {
                   Expanded(
                     child: Row(
                       children: [
-                        CalculatorButton(button_text: 'C', callback: btnOnClick,),2.widthBox,
-
-                        CalculatorButton(button_text: 'x', callback: btnOnClick,),2.widthBox,
-
-                        CalculatorButton(button_text: '>', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '/', callback: btnOnClick),
+                        CalculatorButton(button_text: 'C', btnOnClick: btnOnClick,),2.widthBox,
+                        CalculatorButton(button_text: '⌫', btnOnClick: btnOnClick,),2.widthBox,
+                        CalculatorButton(button_text: '<', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '÷', btnOnClick: btnOnClick),
                       ],
                     ),
                   ),2.heightBox,
                   Expanded(
                     child: Row(
                       children: [
-                        CalculatorButton(button_text: '9', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '8', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '7', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '*', callback: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '9', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '8', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '7', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '×', btnOnClick: btnOnClick),2.widthBox,
                       ],
                     ),
                   ),2.heightBox,
                   Expanded(
                     child: Row(
                       children: [
-                        CalculatorButton(button_text: '6', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '5', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '4', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '-', callback: btnOnClick),
+                        CalculatorButton(button_text: '6', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '5', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '4', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '-', btnOnClick: btnOnClick),
                       ],
                     ),
                   ),2.heightBox,
                   Expanded(
                     child: Row(
                       children: [
-                        CalculatorButton(button_text: '1', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '2', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '3', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '+', callback: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '1', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '2', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '3', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '+', btnOnClick: btnOnClick),2.widthBox,
                       ],
                     ),
                   ),2.heightBox,
@@ -152,13 +129,10 @@ class My_CalculatorState extends State<MyCalculator> {
                   Expanded(
                     child: Row(
                       children: [
-                        CalculatorButton(button_text: '0', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '00', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '.', callback: btnOnClick),2.widthBox,
-
-                        CalculatorButton(button_text: '=', callback: btnOnClick),
+                        CalculatorButton(button_text: '0', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '00', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '.', btnOnClick: btnOnClick),2.widthBox,
+                        CalculatorButton(button_text: '=', btnOnClick: btnOnClick),
                       ],
                     ),
                   ),

@@ -9,7 +9,7 @@ import 'package:learn_app/widgets/tabs.dart';
 import 'package:learn_app/widgets/themes.dart';
 
 import 'calculator/calculator.dart';
-import 'class_files/form/form.dart';
+import 'class_files/class_main.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
       //home: classPrectice(),
       //initialRoute: '/',
 
-      initialRoute: MyRoutes.calculateRoute,
+      initialRoute: MyRoutes.classShowFile,
 
       routes: {
         '/' : (context) => LoginPage(),
-        MyRoutes.classShowFile : (context) => NewForm(),
+        MyRoutes.classShowFile : (context) => ClassShowFile(),
         MyRoutes.calculateRoute : (context) => MyCalculator(),
         MyRoutes.homeRoute : (context) => HomePage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
