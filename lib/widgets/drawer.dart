@@ -21,6 +21,10 @@ class MyDrawer extends StatelessWidget {
     Navigator.pushNamed(context, MyRoutes.mailmeRoute);
   }
 
+  moveToPayment(BuildContext context) async {
+    Navigator.pushNamed(context, MyRoutes.paymentsRoute);
+  }
+
   moveToCalculator(BuildContext context) async {
     Navigator.pushNamed(context, MyRoutes.calculateRoute);
   }
@@ -59,6 +63,12 @@ class MyDrawer extends StatelessWidget {
               onTap: () => moveToMailMe(context),
               leading: Icon(CupertinoIcons.mail, color: Colors.white,),
               title: Text("Mail-me", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+            ),
+            Divider(thickness: 1, indent: 16, color: Colors.white,),
+            ListTile(
+              onTap: () => moveToPayment(context),
+              leading: Icon(Icons.payment_outlined, color: Colors.white,),
+              title: Text("Payment UI", textScaleFactor:1.2, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
             ),
             Divider(thickness: 1, indent: 16, color: Colors.white,),
             ListTile(

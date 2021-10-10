@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_app/pages/card_page.dart';
 import 'package:learn_app/pages/home.dart';
 import 'package:learn_app/pages/login_page.dart';
+import 'package:learn_app/pages/payment_ui/payment_ui.dart';
 import 'package:learn_app/utlts/routes.dart';
 import 'package:learn_app/widgets/tabs.dart';
 import 'package:learn_app/widgets/themes.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       //home: classPrectice(),
       //initialRoute: '/',
 
-      initialRoute: MyRoutes.classShowFile,
+      initialRoute: MyRoutes.paymentsRoute,
 
       routes: {
         '/' : (context) => LoginPage(),
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.calculateRoute : (context) => MyCalculator(),
         MyRoutes.homeRoute : (context) => HomePage(),
         MyRoutes.loginRoute : (context) => LoginPage(),
+        MyRoutes.paymentsRoute : (context) => PaymentApp(),
         MyRoutes.mailmeRoute : (context) => TabsBar(),
         MyRoutes.cardRoute : (context) => CardPage(),
       },
